@@ -1,8 +1,15 @@
 ---
 layout: post
-title:  "It all starts here"
-date:   2015-10-02 12:17:31
-categories: General
+title: "It all starts here"					# Title of the post
+description: The end of the begging 		# Description of the post, used for Facebook Opengraph & Twitter
+headline: Some headline				# Will appear in bold letters on top of the post
+modified: 2015-10-02				# Date
+category: personal
+tags: []
+image: 
+  feature: some-image.jpg
+comments: true
+mathjax:
 ---
 For years I've been meaning to create this without really making any progress. Not that I didn't know how to, but mostly 
 because I couldn't figure out how best to. On many occasions, I've set about creating my own personal blog only to 
@@ -15,6 +22,17 @@ to use this site to document some of the programming discussions and discoveries
 might well become a source of information at some distant future. 
 
 With all that being said, I'm off to get some lunch. 
+
+
+  {% highlight ruby %}
+  def show
+    @widget = Widget(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @widget }
+    end
+  end
+  {% endhighlight %}
 
 Bye !
 

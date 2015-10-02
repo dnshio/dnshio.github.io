@@ -10,6 +10,23 @@
     position: relative;
 }
 
+.logo-text {
+    display: inline-block;
+    padding-top: 1.75rem;
+    padding-bottom: 1.5625rem;
+    font-size: 1rem;
+    background: #e51843;
+    line-height: 1.1;
+    height: 5rem;
+    padding-left : 0.75rem;
+    padding-right : 0.75rem;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    &:hover{
+        color: white;
+    }
+}
+
 .site-title {
     font-size: 26px;
     line-height: 56px;
