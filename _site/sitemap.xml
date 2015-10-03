@@ -38,10 +38,6 @@
     </url>
     
     <url>
-        <loc>http://localhost:4000/css/main.css</loc>
-    </url>
-    
-    <url>
         <loc>http://localhost:4000/search.json</loc>
     </url>
     

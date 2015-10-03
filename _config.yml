@@ -27,7 +27,7 @@ animated_fins:    true
 # Specify the fin color in RGB value
 fin_color:        "255,255,255"
 # Change url to your domain. Leave localhost server or blank when working locally.
-url:              "http://localhost:4000"
+url:              "http://dvitharanage.github.io"
 
 
 # Owner/author information
@@ -38,10 +38,9 @@ owner:
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Medium sized free-range thinker
   # Social networking links used in footer. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:
+  twitter: killneel
   facebook:
-  github:
+  github: dvitharanage
   linkedin:
   instagram:
   tumblr:
@@ -72,7 +71,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/London
 future:      true
-pygments:    true
+highlighter: pygments
 markdown:    kramdown
 paginate:    6
 paginate_path: "page:num"
