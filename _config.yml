@@ -1,19 +1,5 @@
-# Site settings
-#title: Command.run
-#email: dvitharanage@gmail.com
-#description: > # this means to ignore newlines until "baseurl:"
-#  Collective thoughts from a single perspective through murky lenses of D Vitharanage's eyes
-#baseurl: "" # the subpath of your site, e.g. /blog/
-#url: "http://www.command.run" # the base hostname & protocol for your site
-#twitter_username: killneel
-#github_username:  dvitharanage
-#
-## Build settings
-#markdown: kramdown
-
-
 title:            Command.run
-description:      Collective thoughts from a single perspective through murky lenses of D Vitharanage's eyes
+description:      Dinesh Vitharanage's Two Cents
 logo:             cmd-run-logo.png
 disqus_shortname: commandandrun
 # Assign a default image for your site's header and footer
