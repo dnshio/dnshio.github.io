@@ -1,58 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://dvitharanage.github.io</loc>
+        <loc></loc>
     </url>
     
     
     <url>
-        <loc>http://dvitharanage.github.io/404.html</loc>
+        <loc>/404.html</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/about-me/</loc>
+        <loc>/about-me/</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/about/</loc>
+        <loc>/about/</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/categories/index.html</loc>
+        <loc>/categories/index.html</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/featured/</loc>
+        <loc>/featured/</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/feed.xml</loc>
+        <loc>/feed.xml</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/index.html</loc>
+        <loc>/index.html</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/links.jsonp</loc>
+        <loc>/links.jsonp</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/search.json</loc>
+        <loc>/search.json</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/sitemap.xml</loc>
+        <loc>/sitemap.xml</loc>
     </url>
     
     <url>
-        <loc>http://dvitharanage.github.io/tags/index.html</loc>
+        <loc>/tags/index.html</loc>
     </url>
     
 
     
     <url>
-        <loc>http://dvitharanage.github.io/personal/it-all-starts-here</loc>
+        <loc>/personal/a-new-job</loc>
+    </url>
+    
+    <url>
+        <loc>/personal/it-all-starts-here</loc>
     </url>
     
 </urlset>

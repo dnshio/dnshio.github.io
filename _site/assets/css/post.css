@@ -309,8 +309,7 @@ html, body, .notepad-post-container, .notepad-post-header {
   color: #e51843; }
   .notepad-post-share a {
     display: inline-block;
-    margin: 0 0.9375rem;
-    color: #e51843; }
+    margin: 0 0.9375rem; }
   @media only screen and (min-width: 40.063em) {
     .notepad-post-share {
       padding-top: 5rem;
@@ -461,7 +460,7 @@ html, body, .notepad-post-container, .notepad-post-header {
     padding-left: 1.875rem;
     padding-right: 1.875rem; }
     .notepad-page-content > div:not(.notepad-page-title) a, .notepad-page-content > div:not(.notepad-page-title) code {
-      color: #e51843; }
+       }
     .notepad-page-content > div:not(.notepad-page-title) ul, .notepad-page-content > div:not(.notepad-page-title) ol {
       padding-left: 1.25rem;
       font-size: 1.125rem; }
@@ -522,7 +521,7 @@ html, body, .notepad-post-container, .notepad-post-header {
       margin-right: auto; } }
 
 ::selection {
-  background: #e51843;
+  background: #008cba;
   color: #fff; }
 
 ::-moz-selection {
@@ -625,7 +624,7 @@ iframe {
     padding: 4px 6px;
     margin: 2px;
     text-decoration: none;
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid #008cba;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;

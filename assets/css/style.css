@@ -1,3 +1,45 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('/assets/fonts/icomoon.eot?ot1xw');
+  src:url('/assets/fonts/icomoon.eot?ot1xw#iefix') format('embedded-opentype'),
+    url('/assets/fonts/icomoon.ttf?ot1xw') format('truetype'),
+    url('/assets/fonts/icomoon.woff?ot1xw') format('woff'),
+    url('/assets/fonts/icomoon.svg?ot1xw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-directions_run:before {
+  content: "\e800";
+}
+.icon-command:before {
+  content: "\e801";
+}
+.icon-console:before {
+  content: "\e802";
+}
+.icon-command2:before {
+  content: "\e803";
+}
+.icon-terminal:before {
+  content: "\e804";
+}
+
+
 /* tools */
 .cf:before,
 .cf:after {
@@ -18,16 +60,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-text {
   display: inline-block;
-  padding-top: 1.75rem;
+  /*padding-top: 1.75rem;*/
   padding-bottom: 1.5625rem;
-  font-size: 1rem;
-  background: #e51843;
+  font-size: 4rem;
+  /*background: #008cba;*/
   line-height: 1.1;
   height: 5rem;
   padding-left : 0.75rem;
   padding-right : 0.75rem;
-  font-family: "Montserrat", sans-serif;
-  color: white;
+  /*font-family: "Montserrat", sans-serif;*/
+  color: black;
+}
+
+.logo-text :hover, .logo-text :active {
+  color: black;
 }
 
 .logo-text:hover {
@@ -149,7 +195,7 @@ main, .notepad-share-icons, .notepad-disqus {
             width: auto;
             height: auto; }
             .notepad-blog-menu ul li a:hover {
-              border-bottom: 0.1875rem solid #e51843; } }
+              border-bottom: 0.1875rem solid #ff9000; } }
 
 .notepad-site-head .notepad-site-head-menu {
   background: white; }
@@ -185,7 +231,7 @@ main, .notepad-share-icons, .notepad-disqus {
   .notepad-site-head .notepad-site-head-content .notepad-site-head-title-bg {
     display: inline-block;
     padding: 0.625rem;
-    background: #e51843;
+    background: #008cba;
     line-height: 1.1; }
   .notepad-site-head .notepad-site-head-content h1, .notepad-site-head .notepad-site-head-content h2 {
     margin: 0;
@@ -254,7 +300,7 @@ main, .notepad-share-icons, .notepad-disqus {
       display: block;
       font-size: 3.25rem;
       font-weight: 800;
-      color: #e51843;
+      color: #ff9000;
       font-family: "Montserrat", sans-serif; }
     .notepad-content .notepad-index-post .notepad-post-meta .month-year {
       display: block;
@@ -301,13 +347,13 @@ main, .notepad-share-icons, .notepad-disqus {
       display: inline-block;
       padding: 0.3125rem 0.9375rem;
       margin-right: 0.1875rem;
-      color: black;
-      border: 0.0625rem solid black;
+      color: #008cba;
+      border: 0.0625rem solid #008cba;
       border-radius: 0.125rem;
       margin-bottom: 0.3125rem; }
       .notepad-content .notepad-index-post .notepad-index-post-tags a:hover {
-        color: #e51843;
-        border: 0.0625rem solid #e51843; }
+        color: #ff9000;
+        border: 0.0625rem solid #ff9000; }
   @media only screen and (min-width: 40.063em) {
     .notepad-content .notepad-index-post .notepad-index-post-tags {
       padding-top: 0.3125rem;
@@ -332,7 +378,7 @@ main, .notepad-share-icons, .notepad-disqus {
     width: 60%;
     border-radius: 0.125rem; }
     .notepad-content .notepad-index-post .notepad-post-read-more:hover {
-      background-color: #e51843; }
+      background-color: #ff9000; }
   @media only screen and (min-width: 40.063em) {
     .notepad-content .notepad-index-post .notepad-post-read-more {
       width: auto;
@@ -355,8 +401,8 @@ nav.pagination {
     border: 0.125rem solid black; }
   nav.pagination .newer-posts:hover,
   nav.pagination .older-posts:hover {
-    border: 0.125rem solid #e51843;
-    color: #e51843; }
+    border: 0.125rem solid #ff9000;
+    color: #ff9000; }
   nav.pagination .newer-posts.faded,
   nav.pagination .older-posts.faded {
     color: gray;
@@ -455,7 +501,7 @@ nav.pagination {
     padding-bottom: 3.125rem;
     text-align: center; }
     .notepad-tags-container .notepad-tags-header .tag-name {
-      color: #e51843;
+      color: #ff9000;
       text-transform: none; }
     @media only screen and (min-width: 40.063em) {
       .notepad-tags-container .notepad-tags-header {

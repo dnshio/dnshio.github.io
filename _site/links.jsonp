@@ -2,7 +2,12 @@ callback([
 
   {
     "text": "It all starts here",
-    "href": "http://dvitharanage.github.io/personal/it-all-starts-here"
+    "href": "/personal/it-all-starts-here"
+  } ,
+
+  {
+    "text": "A brand new opportunity",
+    "href": "/personal/a-new-job"
   } 
 
 ])
