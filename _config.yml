@@ -4,7 +4,7 @@ email:       dvitharanage@gmail.com
 author:      Dinesh Vitharanage
 description: "One mans rant is another mans bant."
 baseurl:     ""
-url:         "http://localhost:4000"
+url:         "http://dvitharanage.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
