@@ -1,66 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dnsh.io</title>
+    <description>One mans rant is another mans bant.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>PhpSpec is a bloody nightmare</title>
+        <description>&lt;p&gt;At MJM, we use PhpSpec for unit-testing our code. One might argue that these should not be called unit tests since
+you write specifications rather than tests. Call it what you will - we can have that argument another day. Today I will
+rant about the good and some of the bad things about it.&lt;/p&gt;
 
+&lt;p&gt;In a nutshell, PhpSpec helps bring the TDD buzzword to the PHP world. By allowing you to mock shit straight off the bat,
+PhpSpec makes it difficult to come up with excuses like &lt;em&gt;“I wrote the feature but I haven’t written any tests yet”&lt;/em&gt;.
+Again, I’m not pissed off about that.&lt;/p&gt;
 
+&lt;p&gt;In fact, I actually like it because I’m lazy and PhpSpec generates shit for me. I
+just make grand statements like &lt;em&gt;“Oh, I got a Mofo\Bullshit. And it takes a CrunkJuiceFactory as a constructor
+argument. And I can getJuice() from CrunkJuiceFactory anytime I want and it’ll give me n number of juice hits”&lt;/em&gt;. That’s just
+what I told my manager, I haven’t written any of it yet. So I’m like shit… better get that scaffolded. So I do:&lt;/p&gt;
 
-  
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bin/phpspec desc Mofo/Bullshit&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<title type="text">Command.run</title>
-<generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="/" />
-<updated>2015-10-08T13:50:50+01:00</updated>
-<id>/</id>
-<author>
-  <name>Dinesh Vitharanage</name>
-  <uri>/</uri>
-  <email>dvitharanage@gmail.com</email>
-</author>
+&lt;p&gt;Then PhpSpec just makes a specification for you with nothing much is in it but you can’t argue with that since you haven’t
+done any work yet yourself. But you don’t care. You’re like &lt;strong&gt;&lt;em&gt;“Sick! I’m done! I’m gonna just run this test and go home!”&lt;/em&gt;&lt;/strong&gt;
+because you’re all TDD now and they all tell you life is good when you TDD. So, you:&lt;/p&gt;
 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bin/phpspec run spec/Mofo/BullshitSpec.php&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-<entry>
-  <title type="html"><![CDATA[A brand new opportunity]]></title>
-  <link rel="alternate" type="text/html" href="/personal/a-new-job"/>
-  <id>/personal/a-new-job</id>
-  <published>2015-10-08T00:00:00+01:00</published>
-  <updated>2015-10-08T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Dinesh Vitharanage</name>
-    <uri></uri>
-    <email>dvitharanage@gmail.com</email>
-  </author>
-  
-  <content type="html">
-  
-    &lt;p&gt;Pork belly aliqua shankle, tenderloin consectetur nostrud swine in. Nisi ipsum fugiat, flank kevin bresaola ground round laboris. Shoulder sed velit cupidatat magna. Anim meatball doner kevin id. Pork pariatur doner ribeye sirloin, proident landjaeger.&lt;/p&gt;
+&lt;p&gt;Just as you were about to leave, you remember that it’s only 9.30am and you kindda need to write the feature still. Argh!
+FINE!!!! PhpSpec got yo back though. It already noticed that you’ve done fuckall so it asks you…&lt;/p&gt;
 
-&lt;p&gt;Nulla ut commodo excepteur, frankfurter laborum cupim turkey corned beef est do dolore porchetta veniam elit. Excepteur et dolore, magna ut irure exercitation in hamburger spare ribs ex fugiat t-bone bresaola. Incididunt in ipsum laboris porchetta chicken. Officia ribeye consectetur capicola, short ribs tenderloin in pastrami prosciutto strip steak qui. Quis cow voluptate, kielbasa aute veniam frankfurter occaecat consectetur drumstick pork chop.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Mofo/Bullshit
+  10  - it is initializable
+      class Mofo&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;ullshit does not exist.
 
-&lt;p&gt;Excepteur ball tip beef meatloaf, flank aute ut officia ex minim id corned beef porchetta bacon beef ribs. Kielbasa ullamco jerky deserunt laborum. Filet mignon in voluptate, in prosciutto bacon labore shoulder reprehenderit shank excepteur magna. Ball tip shank cow ut shankle. Pastrami lorem ex meatloaf leberkas. Salami veniam qui consequat non ex in sed dolor filet mignon. Ex laboris voluptate consectetur nisi venison turducken picanha laborum landjaeger sausage exercitation boudin ribeye strip steak.&lt;/p&gt;
+1 specs
+1 example &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 broken&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+36ms
 
+  Do you want me to create Mofo&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;ullshit &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;you? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Y/n]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-  
-  &lt;p&gt;&lt;a href=&quot;/personal/a-new-job&quot;&gt;A brand new opportunity&lt;/a&gt; was originally published by Dinesh Vitharanage at &lt;a href=&quot;&quot;&gt;Command.run&lt;/a&gt; on October 08, 2015.&lt;/p&gt;</content>
-</entry>
+&lt;p&gt;You take &lt;code class=&quot;highlighter-rouge&quot;&gt;Y&lt;/code&gt;, and spec gives you your new file and you are ready to write some code. The thought creeps to your mind that
+I could have just done the same thing with your IDE with 3 clicks and you don’t have to keep chatting to a terminal. You are
+correct. But that’s not where Spec saves you. Now is the time Spec REAAAALY start to give you bacon. You start mocking the
+shit out of your object immediately, winning from the get go:&lt;/p&gt;
 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;spec\Mofo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-<entry>
-  <title type="html"><![CDATA[It all starts here]]></title>
-  <link rel="alternate" type="text/html" href="/personal/it-all-starts-here"/>
-  <id>/personal/it-all-starts-here</id>
-  <published>2015-10-02T00:00:00+01:00</published>
-  <updated>2015-10-02T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Dinesh Vitharanage</name>
-    <uri></uri>
-    <email>dvitharanage@gmail.com</email>
-  </author>
-  
-  <content type="html">
-  
-    &lt;p&gt;For years I’ve been meaning to create this without really making any progress. Not that I didn’t know how to, but mostly 
+&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PhpSpec\ObjectBehavior&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Prophecy\Argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BullshitSpec&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ObjectBehavior&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CrunkJuiceFactory&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cjFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$cjFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getJuice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;willReturn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;beConstructedWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cjFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You just noticed that you started describing behaviour of &lt;code class=&quot;highlighter-rouge&quot;&gt;CrunkJuiceFactory&lt;/code&gt; and making claims about what it will do even
+before you wrote anything. You can now start to write your &lt;code class=&quot;highlighter-rouge&quot;&gt;Bullshit&lt;/code&gt; behaviour without having to write too much other bullshit.
+So… it’s kindda nice. So you become dependant on it. But with any shit that gets you hooked, you eventually come to
+find yourself in that moment of overdose where you are like &lt;strong&gt;&lt;em&gt;“WTF dawg???”&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;That moment in PhpSpec happens when you are testing your tests. Spec gets fucking weird here because it’s doing shit load of
+magic and you just don’t understand any of that shit because you never needed to. One such problem is when you are testing
+some code that you have wrapped around a &lt;code class=&quot;highlighter-rouge&quot;&gt;try .. catch&lt;/code&gt; block coz you are a G and you don’t run away from your exceptions.&lt;/p&gt;
+
+&lt;p&gt;If you cause a PhpSpec error, inside a try catch block in your subject (like making a call to a method that you didn’t describe
+in the spec) then you are going to spend fucking hours trying to figure why PhpSpec keep running forever and eventually die
+without giving you any bacon. Or anything for that matter.&lt;/p&gt;
+
+&lt;p&gt;Let me explain better:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getBacon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$bacon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;baconFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NoBaconException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;critical&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;OUT OF BACON!!!! :O&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In the above scenario, if you had forgotten to mock &lt;code class=&quot;highlighter-rouge&quot;&gt;getSome()&lt;/code&gt; method in your &lt;code class=&quot;highlighter-rouge&quot;&gt;BaconFactory&lt;/code&gt; object inside your spec then
+PhpSpec will throw an Exception right where that ‘Undefined method’ was called. This means that the exception gets caught
+by your subject and not PhpSpec itself. And then PhpSpec hangs. And you have no idea WTF just happened. Nothing in the
+terminal. Yeah.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So how do you deal with this?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you come across this sorry situation in your life. Try and narrow down exactly which spec is hanging. And then you will
+probably notice that your subject has a try catch block. Then stick a var_dump in the catch block with the exception message
+and die. It’ll show you the message on your terminal so you can move forward.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getBacon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$bacon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;baconFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NoBaconException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;die&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;critical&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;OUT OF BACON!!!! :O&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Oh, and don’t forget to remove the die statement once you are done debugging.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Sep 2016 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</link>
+        <guid isPermaLink="true">http://localhost:4000/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</guid>
+      </item>
+    
+      <item>
+        <title>It all starts here</title>
+        <description>&lt;p&gt;For years I’ve been meaning to create this without really making any progress. Not that I didn’t know how to, but mostly 
 because I couldn’t figure out how best to. On many occasions, I’ve set about creating my own personal blog only to 
 give up in frustration of balancing between the principle of not re-inventing the wheel but becoming sick of existing 
 tools available for blogging. Ultimately I believe I’ve found the right tool in Jekyll where I can write my blog using 
@@ -68,23 +128,33 @@ an IDE so that I look like working.&lt;/p&gt;
 
 &lt;p&gt;In the coming weeks and months, I hope to bring to you all the news as I see it, whether personal or global. I also hope 
 to use this site to document some of the programming discussions and discoveries that I make along the way so this site 
-might well become a source of information at some distant future. &lt;/p&gt;
+might well become a source of information at some distant future.&lt;/p&gt;
 
-&lt;p&gt;With all that being said, I’m off to get some lunch. &lt;/p&gt;
+&lt;p&gt;With all that being said, I’m off to get some lunch.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;show&lt;/span&gt;
-    &lt;span class=&quot;vi&quot;&gt;@widget&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;respond_to&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# show.html.erb&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@widget&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$responseBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;json_decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;trafficLimiter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setRequestsRemaining&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'X-Requests-Remaining'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;trafficLimiter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCoolOffTimeInSeconds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'X-Rate-Limit-Ttl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ClientErrorResponseException&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Bye !&lt;/p&gt;
 
-
-  
-  &lt;p&gt;&lt;a href=&quot;/personal/it-all-starts-here&quot;&gt;It all starts here&lt;/a&gt; was originally published by Dinesh Vitharanage at &lt;a href=&quot;&quot;&gt;Command.run&lt;/a&gt; on October 02, 2015.&lt;/p&gt;</content>
-</entry>
-
-</feed>
+</description>
+        <pubDate>Fri, 02 Oct 2015 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/personal/2015/10/02/it-all-starts-here/</link>
+        <guid isPermaLink="true">http://localhost:4000/personal/2015/10/02/it-all-starts-here/</guid>
+      </item>
+    
+  </channel>
+</rss>

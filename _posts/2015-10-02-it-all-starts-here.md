@@ -24,15 +24,24 @@ might well become a source of information at some distant future.
 With all that being said, I'm off to get some lunch. 
 
 
-  {% highlight ruby %}
-  def show
-    @widget = Widget(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @widget }
-    end
-  end
-  {% endhighlight %}
+{% highlight php startinline=true %}
+<?php
+try {
+    $response = $request->send();
+    $responseBody = json_decode($response->getBody(true), true);
+
+    $this->trafficLimiter->setRequestsRemaining(
+        (int) $response->getHeader('X-Requests-Remaining')
+    );
+    $this->trafficLimiter->setCoolOffTimeInSeconds(
+        (int) $response->getHeader('X-Rate-Limit-Ttl')
+    );
+
+} catch (ClientErrorResponseException $exception) {
+    $this->logger->error($exception->getMessage());
+}
+{% endhighlight %}
+
 
 Bye !
 

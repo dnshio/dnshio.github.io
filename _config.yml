@@ -1,80 +1,117 @@
-title:            Command.run
-description:      Dinesh Vitharanage's Two Cents
-logo:             cmd-run-logo.png
-disqus_shortname: commandandrun
-# Assign a default image for your site's header and footer
-default_bg:       some-image.jpg
-search:           true
-share:            true
-# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
-readtime:         true
-# Turn on or off the fin animations in the header and footer
-animated_fins:    true
-# Specify the fin color in RGB value
-fin_color:        "255,255,255"
-# Change url to your domain. Leave localhost server or blank when working locally.
-url:              ""
+# Site settings
+title:       dnsh.io
+email:       dvitharanage@gmail.com
+author:      Dinesh Vitharanage
+description: "One mans rant is another mans bant."
+baseurl:     ""
+url:         "http://localhost:4000"
+date_format: "%b %-d, %Y"
 
-
-# Owner/author information
-owner:
-  name:           Dinesh Vitharanage
-  avatar:         mugshot.jpg
-  email:          dvitharanage@gmail.com
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Medium sized free-range thinker
-  # Social networking links used in footer. Update and remove as you like.
-  twitter: killneel
-  facebook:
-  github: dvitharanage
-  linkedin:
-  instagram:
-  tumblr:
-#  hmfaysalsocial:
-#  # For Google Authorship https://plus.google.com/authorship
-#  google_plus:    "http://plus.google.com/123123123123132123"
-
-# Analytics and webmaster tools stuff goes here
+# Google services
+google_verification:
+# Use either direct GA implementation or set up GTM account
+# - using both will skew your data (leave blank to not use at all)
 google_analytics:
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+google_tag_manager:
+# Bing services
+bing_verification:
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Home
-    url: /
-    external: false
-    icon: home
-  - title: Me
-    url: /about-me
-#  - title: Tags
-#    url: /tags
-  - title: About this site
-    url: /about
+# Optional features
+animated:             false
+show_related_posts:   false
+show_post_footers:    true
+show_social_icons:    true
+ajaxify_contact_form: false
+enable_mathjax: false
+extended_fonts: false
+enable_anchorjs: false
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Europe/London
-future:      true
-highlighter: pygments
-markdown:    kramdown
-paginate:    6
-paginate_path: "page:num"
+# Facebook Page integration
+# (for instant articles and other stuff)
+fb_page: false
+fb_page_id: 
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname: dnshio
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
+# Facebook Comments plugin
+# (leave blank to disable Facebook Comments, otherwise set it to true)
+facebook_comments:
+facebook_appid:
+facebook_comments_number: 10
 
-  coderay:
-    coderay_line_numbers:
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+# Social icons
+github_username: dvitharanage
+bitbucket_username:
+stackoverflow_id:
+twitter_username: killneel
+skype_username:
+steam_nickname:
+google_plus_id:
+linkedin_username: dvitharanage
+angellist_username:
+medium_id:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Post sharing icons
+show_sharing_icons: true
+# Change to 'true' to enable individual icons
+share_facebook: false
+share_twitter: true
+share_googleplus: false
+share_linkedin: false
+share_digg: false
+share_tumblr: flase
+share_reddit: true
+share_stumbleupon: true
+share_hackernews: true
+
+text:
+  pagination:
+    newer: 'Newer'
+    older: 'Older'
+  share_buttons:
+    text:         'Spread this shit!'
+    facebook:     'Spread this on Facebook'
+    twitter:      'Spread this on Twittah'
+    googleplus:   'Spread this on Google+'
+    linkedin:     'Spread this on LinkedIn'
+    digg:         'Digg this shit'
+    tumblr:       'Spread this on Tumblr'
+    reddit:       'Spread this on Reddit'
+    stumbleupon:  'Spread this on StumbleUpon'
+    hackernews:   'Spread this on Hacker News'
+  post:
+    updated:        'Updated'
+    minute_read:    'minute read'
+    related_posts:  'Related Posts'
+  index:
+    coming_soon: 'Coming soon...'
+  contact:
+    email:    'Your email'
+    content:  'Spill it'
+    subject:  'New submission from the blog'
+    submit:   'Come at me bro!'
+    ajax:
+      sending:  'sending..'
+      sent:     'Message sent!'
+      error:    'Error!'
+  thanks: 'Safe. I will get back to you if it important'
+  og_locale: 'en_UK'
+
+# Build settings
+markdown:     kramdown
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     4
+sass:
+  compressed: true
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+# https://github.com/jekyll/jekyll/issues/2938
+exclude: [vendor]

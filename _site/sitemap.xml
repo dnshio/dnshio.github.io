@@ -1,62 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc></loc>
-    </url>
-    
-    
-    <url>
-        <loc>/404.html</loc>
-    </url>
-    
-    <url>
-        <loc>/about-me/</loc>
-    </url>
-    
-    <url>
-        <loc>/about/</loc>
-    </url>
-    
-    <url>
-        <loc>/categories/index.html</loc>
-    </url>
-    
-    <url>
-        <loc>/featured/</loc>
-    </url>
-    
-    <url>
-        <loc>/feed.xml</loc>
-    </url>
-    
-    <url>
-        <loc>/index.html</loc>
-    </url>
-    
-    <url>
-        <loc>/links.jsonp</loc>
-    </url>
-    
-    <url>
-        <loc>/search.json</loc>
-    </url>
-    
-    <url>
-        <loc>/sitemap.xml</loc>
-    </url>
-    
-    <url>
-        <loc>/tags/index.html</loc>
-    </url>
-    
-
-    
-    <url>
-        <loc>/personal/a-new-job</loc>
-    </url>
-    
-    <url>
-        <loc>/personal/it-all-starts-here</loc>
-    </url>
-    
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</loc>
+<lastmod>2016-09-22T00:00:00+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/personal/2015/10/02/it-all-starts-here/</loc>
+<lastmod>2015-10-02T00:00:00+02:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/404.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/about/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/contact/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/thanks/</loc>
+</url>
 </urlset>
