@@ -129,53 +129,5 @@ and die. It’ll show you the message on your terminal so you can move forward.<
             </item>
         
     
-        
-            <item>
-                <title>It all starts here</title>
-                <link>http://localhost:4000/personal/2015/10/02/it-all-starts-here/</link>
-                <content:encoded>
-                    <![CDATA[
-                    <p>For years I’ve been meaning to create this without really making any progress. Not that I didn’t know how to, but mostly 
-because I couldn’t figure out how best to. On many occasions, I’ve set about creating my own personal blog only to 
-give up in frustration of balancing between the principle of not re-inventing the wheel but becoming sick of existing 
-tools available for blogging. Ultimately I believe I’ve found the right tool in Jekyll where I can write my blog using 
-an IDE so that I look like working.</p>
-
-<p>In the coming weeks and months, I hope to bring to you all the news as I see it, whether personal or global. I also hope 
-to use this site to document some of the programming discussions and discoveries that I make along the way so this site 
-might well become a source of information at some distant future.</p>
-
-<p>With all that being said, I’m off to get some lunch.</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
-    <span class="nv">$responseBody</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
-
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">trafficLimiter</span><span class="o">-&gt;</span><span class="na">setRequestsRemaining</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">'X-Requests-Remaining'</span><span class="p">)</span>
-    <span class="p">);</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">trafficLimiter</span><span class="o">-&gt;</span><span class="na">setCoolOffTimeInSeconds</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getHeader</span><span class="p">(</span><span class="s1">'X-Rate-Limit-Ttl'</span><span class="p">)</span>
-    <span class="p">);</span>
-
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ClientErrorResponseException</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="nv">$exception</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Bye !</p>
-
-
-                    ]]>
-                </content:encoded>
-                <guid isPermaLink="false">/personal/2015/10/02/it-all-starts-here/</guid>
-                <description>
-                    
-                </description>
-                <pubDate>Fri, 02 Oct 2015 00:00:00 +0200</pubDate>
-                <author>Dinesh Vitharanage</author>
-            </item>
-        
-    
   </channel>
 </rss>
