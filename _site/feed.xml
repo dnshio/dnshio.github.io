@@ -3,8 +3,8 @@
   <channel>
     <title>dnsh.io</title>
     <description>One mans rant is another mans bant.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://dvitharanage.github.io/</link>
+    <atom:link href="http://dvitharanage.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>PhpSpec is a bloody nightmare</title>
@@ -17,30 +17,30 @@ PhpSpec makes it difficult to come up with excuses like &lt;em&gt;“I wrote the
 Again, I’m not pissed off about that.&lt;/p&gt;
 
 &lt;p&gt;In fact, I actually like it because I’m lazy and PhpSpec generates shit for me. I
-just make grand statements like &lt;em&gt;“Oh, I got a Mofo\Bullshit. And it takes a CrunkJuiceFactory as a constructor
+just make grand statements like &lt;em&gt;“Oh, I got a Some\Bullshit. And it takes a CrunkJuiceFactory as a constructor
 argument. And I can getJuice() from CrunkJuiceFactory anytime I want and it’ll give me n number of juice hits”&lt;/em&gt;. That’s just
 what I told my manager, I haven’t written any of it yet. So I’m like shit… better get that scaffolded. So I do:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bin/phpspec desc Mofo/Bullshit&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bin/phpspec desc Some/Bullshit&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Then PhpSpec just makes a specification for you with nothing much is in it but you can’t argue with that since you haven’t
 done any work yet yourself. But you don’t care. You’re like &lt;strong&gt;&lt;em&gt;“Sick! I’m done! I’m gonna just run this test and go home!”&lt;/em&gt;&lt;/strong&gt;
 because you’re all TDD now and they all tell you life is good when you TDD. So, you:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bin/phpspec run spec/Mofo/BullshitSpec.php&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bin/phpspec run spec/Some/BullshitSpec.php&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Just as you were about to leave, you remember that it’s only 9.30am and you kindda need to write the feature still. Argh!
 FINE!!!! PhpSpec got yo back though. It already noticed that you’ve done fuckall so it asks you…&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Mofo/Bullshit
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Some/Bullshit
   10  - it is initializable
-      class Mofo&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;ullshit does not exist.
+      class Some&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;ullshit does not exist.
 
 1 specs
 1 example &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1 broken&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 36ms
 
-  Do you want me to create Mofo&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;ullshit &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;you? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Y/n]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  Do you want me to create Some&lt;span class=&quot;se&quot;&gt;\B&lt;/span&gt;ullshit &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;you? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Y/n]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;You take &lt;code class=&quot;highlighter-rouge&quot;&gt;Y&lt;/code&gt;, and spec gives you your new file and you are ready to write some code. The thought creeps to your mind that
 I could have just done the same thing with your IDE with 3 clicks and you don’t have to keep chatting to a terminal. You are
@@ -48,7 +48,7 @@ correct. But that’s not where Spec saves you. Now is the time Spec REAAAALY st
 shit out of your object immediately, winning from the get go:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;spec\Mofo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;spec\Some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PhpSpec\ObjectBehavior&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Prophecy\Argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -95,7 +95,7 @@ terminal. Yeah.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;So how do you deal with this?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;If you come across this sorry situation in your life. Try and narrow down exactly which spec is hanging. And then you will
+&lt;p&gt;If you come across this sorry situation in your life, try and narrow down exactly which spec is hanging. And then you will
 probably notice that your subject has a try catch block. Then stick a var_dump in the catch block with the exception message
 and die. It’ll show you the message on your terminal so you can move forward.&lt;/p&gt;
 
@@ -114,8 +114,8 @@ and die. It’ll show you the message on your terminal so you can move forward.&
 &lt;p&gt;Oh, and don’t forget to remove the die statement once you are done debugging.&lt;/p&gt;
 </description>
         <pubDate>Thu, 22 Sep 2016 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</link>
-        <guid isPermaLink="true">http://localhost:4000/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</guid>
+        <link>http://dvitharanage.github.io/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</link>
+        <guid isPermaLink="true">http://dvitharanage.github.io/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</guid>
       </item>
     
   </channel>

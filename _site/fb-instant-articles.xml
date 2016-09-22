@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://localhost:4000</link>
+    <link>http://dvitharanage.github.io</link>
     <description>
       One mans rant is another mans bant.
     </description>
@@ -10,7 +10,7 @@
         
             <item>
                 <title>PhpSpec is a bloody nightmare</title>
-                <link>http://localhost:4000/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</link>
+                <link>http://dvitharanage.github.io/programming/2016/09/22/phpspec-is-a-bloody-nightmare/</link>
                 <content:encoded>
                     <![CDATA[
                     <p>At MJM, we use PhpSpec for unit-testing our code. One might argue that these should not be called unit tests since
@@ -22,30 +22,30 @@ PhpSpec makes it difficult to come up with excuses like <em>“I wrote the featu
 Again, I’m not pissed off about that.</p>
 
 <p>In fact, I actually like it because I’m lazy and PhpSpec generates shit for me. I
-just make grand statements like <em>“Oh, I got a Mofo\Bullshit. And it takes a CrunkJuiceFactory as a constructor
+just make grand statements like <em>“Oh, I got a Some\Bullshit. And it takes a CrunkJuiceFactory as a constructor
 argument. And I can getJuice() from CrunkJuiceFactory anytime I want and it’ll give me n number of juice hits”</em>. That’s just
 what I told my manager, I haven’t written any of it yet. So I’m like shit… better get that scaffolded. So I do:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/phpspec desc Mofo/Bullshit</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/phpspec desc Some/Bullshit</code></pre></figure>
 
 <p>Then PhpSpec just makes a specification for you with nothing much is in it but you can’t argue with that since you haven’t
 done any work yet yourself. But you don’t care. You’re like <strong><em>“Sick! I’m done! I’m gonna just run this test and go home!”</em></strong>
 because you’re all TDD now and they all tell you life is good when you TDD. So, you:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/phpspec run spec/Mofo/BullshitSpec.php</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bin/phpspec run spec/Some/BullshitSpec.php</code></pre></figure>
 
 <p>Just as you were about to leave, you remember that it’s only 9.30am and you kindda need to write the feature still. Argh!
 FINE!!!! PhpSpec got yo back though. It already noticed that you’ve done fuckall so it asks you…</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Mofo/Bullshit
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Some/Bullshit
   10  - it is initializable
-      class Mofo<span class="se">\B</span>ullshit does not exist.
+      class Some<span class="se">\B</span>ullshit does not exist.
 
 1 specs
 1 example <span class="o">(</span>1 broken<span class="o">)</span>
 36ms
 
-  Do you want me to create Mofo<span class="se">\B</span>ullshit <span class="k">for </span>you? <span class="o">[</span>Y/n]</code></pre></figure>
+  Do you want me to create Some<span class="se">\B</span>ullshit <span class="k">for </span>you? <span class="o">[</span>Y/n]</code></pre></figure>
 
 <p>You take <code class="highlighter-rouge">Y</code>, and spec gives you your new file and you are ready to write some code. The thought creeps to your mind that
 I could have just done the same thing with your IDE with 3 clicks and you don’t have to keep chatting to a terminal. You are
@@ -53,7 +53,7 @@ correct. But that’s not where Spec saves you. Now is the time Spec REAAAALY st
 shit out of your object immediately, winning from the get go:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">namespace</span> <span class="nx">spec\Mofo</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">spec\Some</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">PhpSpec\ObjectBehavior</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Prophecy\Argument</span><span class="p">;</span>
@@ -100,7 +100,7 @@ terminal. Yeah.</p>
 
 <p><strong>So how do you deal with this?</strong></p>
 
-<p>If you come across this sorry situation in your life. Try and narrow down exactly which spec is hanging. And then you will
+<p>If you come across this sorry situation in your life, try and narrow down exactly which spec is hanging. And then you will
 probably notice that your subject has a try catch block. Then stick a var_dump in the catch block with the exception message
 and die. It’ll show you the message on your terminal so you can move forward.</p>
 

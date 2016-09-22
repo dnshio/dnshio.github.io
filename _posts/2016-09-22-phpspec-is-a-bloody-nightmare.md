@@ -16,12 +16,12 @@ PhpSpec makes it difficult to come up with excuses like _"I wrote the feature bu
 Again, I'm not pissed off about that.
 
 In fact, I actually like it because I'm lazy and PhpSpec generates shit for me. I
-just make grand statements like _"Oh, I got a Mofo\Bullshit. And it takes a CrunkJuiceFactory as a constructor
+just make grand statements like _"Oh, I got a Some\Bullshit. And it takes a CrunkJuiceFactory as a constructor
 argument. And I can getJuice() from CrunkJuiceFactory anytime I want and it'll give me n number of juice hits"_. That's just
 what I told my manager, I haven't written any of it yet. So I'm like shit... better get that scaffolded. So I do:
 
 {% highlight bash %}
-bin/phpspec desc Mofo/Bullshit
+bin/phpspec desc Some/Bullshit
 {% endhighlight %}
 
 Then PhpSpec just makes a specification for you with nothing much is in it but you can't argue with that since you haven't
@@ -29,22 +29,22 @@ done any work yet yourself. But you don't care. You're like **_"Sick! I'm done! 
 because you're all TDD now and they all tell you life is good when you TDD. So, you:
 
 {% highlight bash %}
-bin/phpspec run spec/Mofo/BullshitSpec.php
+bin/phpspec run spec/Some/BullshitSpec.php
 {% endhighlight %}
 
 Just as you were about to leave, you remember that it's only 9.30am and you kindda need to write the feature still. Argh!
 FINE!!!! PhpSpec got yo back though. It already noticed that you've done fuckall so it asks you...
 
 {% highlight bash %}
-Mofo/Bullshit
+Some/Bullshit
   10  - it is initializable
-      class Mofo\Bullshit does not exist.
+      class Some\Bullshit does not exist.
 
 1 specs
 1 example (1 broken)
 36ms
 
-  Do you want me to create Mofo\Bullshit for you? [Y/n]
+  Do you want me to create Some\Bullshit for you? [Y/n]
 {% endhighlight %}
 
 You take `Y`, and spec gives you your new file and you are ready to write some code. The thought creeps to your mind that
@@ -55,7 +55,7 @@ shit out of your object immediately, winning from the get go:
 
 {% highlight php %}
 <?php
-namespace spec\Mofo;
+namespace spec\Some;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -107,7 +107,7 @@ terminal. Yeah.
 
 **So how do you deal with this?**
 
-If you come across this sorry situation in your life. Try and narrow down exactly which spec is hanging. And then you will
+If you come across this sorry situation in your life, try and narrow down exactly which spec is hanging. And then you will
 probably notice that your subject has a try catch block. Then stick a var_dump in the catch block with the exception message
 and die. It'll show you the message on your terminal so you can move forward.
 
