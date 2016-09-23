@@ -24,7 +24,7 @@ haven't written any of that behaviour yet. Better get that scaffolded... So I do
 bin/phpspec desc Some/Bullshit
 {% endhighlight %}
 
-Then PhpSpec just makes a specification for you with nothing much is in it but you can't argue with that since you haven't
+Then PhpSpec just makes a specification for you with nothing much in it but you can't argue with that since you haven't
 done any work yet yourself. But you don't care. This is TDD so you run the test anyway:
 
 {% highlight bash %}
