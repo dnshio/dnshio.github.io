@@ -17,23 +17,21 @@ Again, I'm not pissed off about that.
 
 In fact, I actually like it because I'm lazy and PhpSpec generates shit for me. I
 just make grand statements like _"Oh, I got a Some\Bullshit. And it takes a CrunkJuiceFactory as a constructor
-argument. And I can getJuice() from CrunkJuiceFactory anytime I want and it'll give me n number of juice hits"_. That's just
-what I told my manager, I haven't written any of it yet. So I'm like shit... better get that scaffolded. So I do:
+argument. And I can getJuice() from CrunkJuiceFactory anytime I want and it'll give me n number of juice hits"_. But I
+haven't written any of that behaviour yet. Better get that scaffolded... So I do:
 
 {% highlight bash %}
 bin/phpspec desc Some/Bullshit
 {% endhighlight %}
 
 Then PhpSpec just makes a specification for you with nothing much is in it but you can't argue with that since you haven't
-done any work yet yourself. But you don't care. You're like **_"Sick! I'm done! I'm gonna just run this test and go home!"_**
-because you're all TDD now and they all tell you life is good when you TDD. So, you:
+done any work yet yourself. But you don't care. This is TDD so you run the test anyway:
 
 {% highlight bash %}
 bin/phpspec run spec/Some/BullshitSpec.php
 {% endhighlight %}
 
-Just as you were about to leave, you remember that it's only 9.30am and you kindda need to write the feature still. Argh!
-FINE!!!! PhpSpec got yo back though. It already noticed that you've done fuckall so it asks you...
+Oh look! PhpSpec wants to help you create the actual test subject!
 
 {% highlight bash %}
 Some/Bullshit
@@ -47,10 +45,13 @@ Some/Bullshit
   Do you want me to create Some\Bullshit for you? [Y/n]
 {% endhighlight %}
 
-You take `Y`, and spec gives you your new file and you are ready to write some code. The thought creeps to your mind that
-I could have just done the same thing with your IDE with 3 clicks and you don't have to keep chatting to a terminal. You are
-correct. But that's not where Spec saves you. Now is the time Spec REAAAALY start to give you bacon. You start mocking the
-shit out of your object immediately, winning from the get go:
+You take `Y`, and spec gives you your new file and you are ready to write some code. At this point, I know the IDE warriors
+are up on my case pointing out that one could achieve the same with 3 clicks and you don't have to keep chatting to a terminal. You are
+correct. But that's not where Spec saves you. PhpSpec gives you the ability to focus on TDD, writing your subject and mocking
+the behaviour of its dependencies right from the start.
+
+For example, you can just scaffold out `CrunkJuiceFactory` object just like your `Bullshit` object. And then you can mock
+return values of methods in `CrunkJuiceFactory` so that you can just focus on writing the actual behaviour of `Bullshit`:
 
 
 {% highlight php %}
@@ -71,17 +72,22 @@ class BullshitSpec extends ObjectBehavior
 
 {% endhighlight %}
 
-You just noticed that you started describing behaviour of `CrunkJuiceFactory` and making claims about what it will do even
-before you wrote anything. You can now start to write your `Bullshit` behaviour without having to write too much other bullshit.
-So... it's kindda nice. So you become dependant on it. But with any shit that gets you hooked, you eventually come to
-find yourself in that moment of overdose where you are like **_"WTF dawg???"_**.
+You just noticed that you started describing behaviour of `CrunkJuiceFactory` and making claims about what it will do before
+you even thought about implementing it. This is great for productivity because you don't have to write both classes in parallel.
 
-That moment in PhpSpec happens when you are testing your tests. Spec gets fucking weird here because it's doing shit load of
-magic and you just don't understand any of that shit because you never needed to. One such problem is when you are testing
-some code that you have wrapped around a `try .. catch` block coz you are a G and you don't run away from your exceptions.
+But how does that even work?? This witchcraft makes you productive but unless you understand the underlying mechanics of
+the framework, you will run in to problems. Essentially, PhpSpec makes heavy use of another buzzword. **Reflection**.
+
+Reflection allows PhpSpec to get a description of the object and the dependencies that you are trying to test. And using
+this information, PhpSpec creates stunt doubles of your objects which it pushes through your test subject. And this stunt
+double essentially intercepts calls made from your test subject to it and then returns values that you have mocked. This
+is what you did when you described `$cjFactory->getJuice()->willReturn(5);`.
+
+All this stuff sounds great! Why the damn rant? Well, the problem is that this makes it very difficult to test your tests.
+Spec gets weird when you are testing some code that you have wrapped around a `try .. catch` block.
 
 If you cause a PhpSpec error, inside a try catch block in your subject (like making a call to a method that you didn't describe
-in the spec) then you are going to spend fucking hours trying to figure why PhpSpec keep running forever and eventually die
+in the spec) then you are going to spend hours trying to figure out why PhpSpec keep running forever and eventually die
 without giving you any bacon. Or anything for that matter.
 
 Let me explain better:
@@ -93,7 +99,7 @@ public function getBacon()
 {
     try {
         $bacon = $this->baconFactory->getSome();
-    } catch (NoBaconException $e) {
+    } catch (\Exception $e) {
         $this->logger->critical("OUT OF BACON!!!! :O");
     }
 }
@@ -103,7 +109,8 @@ public function getBacon()
 In the above scenario, if you had forgotten to mock `getSome()` method in your `BaconFactory` object inside your spec then
 PhpSpec will throw an Exception right where that 'Undefined method' was called. This means that the exception gets caught
 by your subject and not PhpSpec itself. And then PhpSpec hangs. And you have no idea WTF just happened. Nothing in the
-terminal. Yeah.
+terminal. Just hangs. If you ran it with php -d memory_limit=-1 then it hangs even longer. Possibly until the end of the
+world.
 
 **So how do you deal with this?**
 
@@ -118,7 +125,7 @@ public function getBacon()
 {
     try {
         $bacon = $this->baconFactory->getSome();
-    } catch (NoBaconException $e) {
+    } catch (\Exception $e) {
         var_dump($e->getMessage());die;
         $this->logger->critical("OUT OF BACON!!!! :O");
     }
