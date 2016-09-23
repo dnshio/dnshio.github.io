@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "PhpSpec is a bloody nightmare"
-description: PhpSpec is a bloody nightmare sometimes  # Description of the post, used for Facebook Opengraph & Twitter
+description: PhpSpec gives with one hand but takes with both  # Description of the post, used for Facebook Opengraph & Twitter
 modified: 2016-09-22
 category: Programming
 tags: [php, testing]
 mathjax:
 ---
-At MJM, we use PhpSpec for unit-testing our code. One might argue that these should not be called unit tests since
+Where I work, we use PhpSpec for unit-testing our code. One might argue that these should not be called unit tests since
 you write specifications rather than tests. Call it what you will - we can have that argument another day. Today I will
 rant about the good and some of the bad things about it.
 
