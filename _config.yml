@@ -93,13 +93,13 @@ text:
   contact:
     email:    'Your email'
     content:  'Spill it'
-    subject:  'New submission from the blog'
+    subject:  'New submission from the dnsh.io'
     submit:   'Come at me bro!'
     ajax:
       sending:  'sending..'
       sent:     'Message sent!'
       error:    'Error!'
-  thanks: 'Safe. I will get back to you if it important'
+  thanks: "Safe. I will get back to you if it's important"
   og_locale: 'en_UK'
 
 # Build settings
