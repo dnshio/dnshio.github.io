@@ -34,7 +34,10 @@ to listen to a incredibly large collection of recorded music. But it falls short
 When you know the artist and the song, you can try and listen to more from the same artist or find other artists that they
 collaborated with or even try "similar artists" recommended by Spotify in your quest to find more of that flavour. Sometimes
 this doesn't work because the the song that you heard from that artist may have been a special release and the rest of their
-releases are a completely different genre altogether (yes, this happens - quite a lot actually).
+releases are a completely different genre altogether (yes, this happens - quite a lot in niche genres).
+
+>  Algorithmic music discovery doesn't quite work for creative content because art is often varied and doesn't always follow
+   a consistent and a predictable pattern.
 
 The thing is, the music industry had been around for a long time and this problem had already been solved. Algorithmic music
 discovery doesn't quite work for creative content because art is often varied and doesn't always follow a consistent and
@@ -61,4 +64,3 @@ label:"1080p"
 ```
 
 Go out and try it and zero in on the music you reeeeaaaalllly want.
-
