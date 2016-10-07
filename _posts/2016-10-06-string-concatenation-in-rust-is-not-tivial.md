@@ -110,4 +110,25 @@ fn main() {
 }
 ```
 
-Sometimes life can be hard like that.
+### But WTF? why do you have to do that?
+The simple answer is because how concatenation is done. When you are using the `+` operator for `Strings` in Rust, you are
+essentially calling the [std::ops::Add Trait](https://doc.rust-lang.org/std/ops/trait.Add.html) on the `String` on the
+left hand side. And this Trait is designed so that the left hand side argument should be `String` and the right hand side
+argument should be an `&str`.
+
+So now we understand that this is because of a particular design decision of the standard library. But why? Why not just
+allow for two arguments like `add(a: String, b: String) -> String`?
+
+This is basically down to how and where things are stored in the memory and the operational cost of mutating them.
+
+* `impl<'a> Add<String> for &'a str` requires prepending, which is not as efficient as appending
+* `impl Add<String> for String` needlessly consume two arguments when one is sufficient
+* `impl<'a, 'b> Add<&'a str>` for &'b str hides an unconditional memory allocation
+
+So, yeah... a very long article later, we finally managed to concatenate two Strings. And that's the thing about languages
+that let you play with memory. You have to keep asking questions until you go all the way down to the physical memory in
+order to understand something that you spend less than a minute on in high-level languages.
+
+But don't be discouraged by all this. You can just go about concatenating Strings as if this article didn't even exist.
+You get the hang of the language pretty quickly. And the compiler is far more helpful than the C compiler. And it's a good
+language to learn if you want to write something that's going to give you performance boost on your existing implementation.
