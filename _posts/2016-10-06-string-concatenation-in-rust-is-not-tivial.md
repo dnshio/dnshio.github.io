@@ -8,32 +8,12 @@ tags: [programming, rust]
 mathjax:
 ---
 So I've been messing with [Rust language](https://www.rust-lang.org) for a couple of weeks now and I am thoroughly enjoying
-it. Rust is a "systems programming language" (i.e: languages that compile down to machine code and does not require a runtime)
-developed by Mozilla foundation (same dudes as Firefox browser). Systems languages are best suited for writing software that
-directly control hardware such a drivers and embedded software. C and C++ generally carried the flag in this area since I
-was born. And since the late 90's the focus shifted from mostly systems programming to applications programming. This shift
-in focus meant that more and more higher level programming languages were invented since then - Java, Python and Ruby being
-examples of those.
+it. Rust is a "systems programming language" developed by Mozilla foundation. It's becoming popular with plenty of rave reviews
+about seg-fault safety and the modern syntax. I highly recommend taking a look if you haven't already.
 
-Rust is very new. Version 1.0 (stable) was released in the summer of 2015. What this means is that there is now a systems
-language out there whose syntax is totally different to C. It borrows interesting concepts from functional languages like
-Haskell, without the cost of abstraction (because it's compiled down to machine code). It's multi-paradigm so you can mix
-functional and imperative styles of code. i.e you can still loop using an accumulator AND fold and map over collections.
-
-But one of the biggest selling points of Rust is guarantees safety against [Segment faults](http://stackoverflow.com/questions/2346806/what-is-a-segmentation-fault).
-It does so by eliminating the root causes of seg faults: aliasing and mutation. In other words, seg faults happen when
-there are multiple references to a single segment in the memory and more than one of those references has the ability to
-change the data. Rust solves this problem by introducing the concept of "Ownership and Borrowing" whereby ensuring that
-there is only ever a single mutable reference to a location in memory.
-
-Anyway.. all this is great but writing Rust forces you to do something that you don't normally do when working with languages
-like Java, Python, Ruby and ahem... PHP, which is thinking about your data as pieces of information that exists *physically*.
-This is because Rust doesn't have a garbage collector and you know exactly when memory is freed (as soon as a value goes
-out of scope). This is great because even the worst code that you write in Rust would end up running faster than the best
-code that you write in a high-level language. In fact, this is one of the reasons why Rust was invented in the first place.
-
-But all this control sometimes makes it very difficult to do some of the most trivial things in programming. Take string
-concatenation for example.
+Rust, being a systems language, gives you low level access to the system, giving you the control over how things are
+laid out in memory. But all this control sometimes makes it very difficult to do some of the most trivial things in programming.
+Take string concatenation for example.
 
 This is how you do it in Javascript:
 
@@ -125,10 +105,4 @@ This is basically down to how and where things are stored in the memory and the 
 * `impl Add<String> for String` needlessly consume two arguments when one is sufficient
 * `impl<'a, 'b> Add<&'a str>` for &'b str hides an unconditional memory allocation
 
-So, yeah... a very long article later, we finally managed to concatenate two Strings. And that's the thing about languages
-that let you play with memory. You have to keep asking questions until you go all the way down to the physical memory in
-order to understand something that you spend less than a minute on in high-level languages.
 
-But don't be discouraged by all this. You can just go about concatenating Strings as if this article didn't even exist.
-You get the hang of the language pretty quickly. And the compiler is far more helpful than the C compiler. And it's a good
-language to learn if you want to write something that's going to give you performance boost on your existing implementation.
