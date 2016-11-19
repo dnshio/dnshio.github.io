@@ -1,5 +1,12 @@
 ---
 published: true
+layout: post
+description: 'Mass surveillance is not only useless, it''s also dangerous'
+modified: 2016-11-19T00:00:00.000Z
+category: Security
+tags:
+  - security
+  - surveillance
 ---
 Last Thursday(17th Nov 2016), The [UK Parliament approved a bill called Investigatory Powers Act](https://www.theguardian.com/world/2016/nov/19/extreme-surveillance-becomes-uk-law-with-barely-a-whimper) which legalises a plathora of digital spying activities by government agencies. This bill is also commonly known as "The Snoopers Charter". The bill grants the following powers:
 
