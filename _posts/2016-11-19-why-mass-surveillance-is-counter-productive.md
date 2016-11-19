@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 description: 'Mass surveillance is not only useless, it''s also dangerous'
 modified: 2016-11-19T00:00:00.000Z
