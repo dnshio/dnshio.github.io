@@ -24,12 +24,12 @@ var xy = x + y;
 
 And in PHP:
 
-{% highlight php%}
+{% highlight php %}
 <?php
 $x = "Hello ";
 $y = "World";
 $xy = $x . $y;
-{% endhighlight php%}
+{% endhighlight php %}
 
 So you would think that the following would work in Rust:
 
