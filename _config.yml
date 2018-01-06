@@ -1,6 +1,6 @@
 # Site settings
 title:       dnsh.io
-email:       dvitharanage@gmail.com
+email:       dinesh@dnsh.io
 author:      Dinesh Vitharanage
 description: "One mans rant is another mans bant."
 baseurl:     ""
@@ -42,7 +42,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: dvitharanage
+github_username: dnshio
 bitbucket_username:
 stackoverflow_id:
 twitter_username: killneel
@@ -74,12 +74,12 @@ text:
     newer: 'Newer'
     older: 'Older'
   share_buttons:
-    text:         'Spread this shit!'
+    text:         'Spread this!'
     facebook:     'Spread this on Facebook'
     twitter:      'Spread this on Twittah'
     googleplus:   'Spread this on Google+'
     linkedin:     'Spread this on LinkedIn'
-    digg:         'Digg this shit'
+    digg:         'Digg this!'
     tumblr:       'Spread this on Tumblr'
     reddit:       'Spread this on Reddit'
     stumbleupon:  'Spread this on StumbleUpon'
@@ -94,7 +94,7 @@ text:
     email:    'Your email'
     content:  'Spill it'
     subject:  'New submission from the dnsh.io'
-    submit:   'Come at me bro!'
+    submit:   'Send it!'
     ajax:
       sending:  'sending..'
       sent:     'Message sent!'
